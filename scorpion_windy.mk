@@ -21,4 +21,7 @@ PRODUCT_MODEL := Xperia Z3 Tablet Compact WiFi (B2G)
 GAIA_DEV_PIXELS_PER_PX := 2
 BOOTANIMATION_ASSET_SIZE := 1080p
 
+PRODUCT_COPY_FILES += \
+    device/sony/scorpion_windy/bootrec-device:root/sbin/bootrec-device
+
 $(call inherit-product-if-exists, vendor/sony/scorpion_windy-blobs/scorpion_windy-vendor-blobs.mk)
