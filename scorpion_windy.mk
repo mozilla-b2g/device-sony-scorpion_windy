@@ -1,4 +1,3 @@
-#
 # Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-add_lunch_combo scorpion_windy-userdebug
+$(call inherit-product, device/sony/scorpion_windy/aosp_sgp611.mk)
+
+PRODUCT_NAME := scorpion_windy
+PRODUCT_DEVICE := scorpion_windy
+PRODUCT_MODEL := Xperia Z3 Tablet Compact WiFi (B2G)
+
+GAIA_DEV_PIXELS_PER_PX := 2
+BOOTANIMATION_ASSET_SIZE := 1080p
+
+PRODUCT_COPY_FILES += \
+    device/sony/scorpion_windy/bootrec-device:root/sbin/bootrec-device
+
+$(call inherit-product-if-exists, vendor/sony/scorpion_windy-blobs/scorpion_windy-vendor-blobs.mk)
