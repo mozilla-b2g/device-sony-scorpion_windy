@@ -19,7 +19,7 @@ PRODUCT_COPY_FILES += \
     device/sony/scorpion_windy/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     device/sony/scorpion_windy/rootdir/system/etc/BCM4354.hcd:system/etc/firmware/BCM43xx.hcd \
     device/sony/scorpion_windy/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
-    device/sony/scorpion_windy/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
+    device/sony/scorpion_windy/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     device/sony/scorpion_windy/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     device/sony/scorpion_windy/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/sony/scorpion_windy/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
@@ -66,6 +66,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
     ro.usb.pid_suffix=1C0
 
+# Camera actuator selection
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.alt.act=false
+
 $(call inherit-product, device/sony/shinano/platform.mk)
-$(call inherit-product-if-exists, vendor/sony/scorpion/scorpion-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/shinano-scorpion/scorpion-vendor.mk)
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
